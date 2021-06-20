@@ -1,5 +1,5 @@
 FROM node:lts-alpine
-LABEL maintainer="whyour"
+LABEL maintainer="limoe"
 ARG QL_URL=https://github.com/Zy143L/qinglong.git
 ARG QL_BRANCH=master
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
