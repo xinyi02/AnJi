@@ -22,7 +22,7 @@ jobs:
       - name: copy to static repo
         env: 
           # GITHUB_REPO: gitee.com/whyour/qinglong-static
-          GITHUB_REPO: github.com/whyour/qinglong-static
+          GITHUB_REPO: github.com/Zy143L/qinglong-static
         run: |
           mkdir -p static
           cd ./static 
