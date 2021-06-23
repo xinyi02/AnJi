@@ -7,7 +7,6 @@
  * @param text 通知头
  * @param desp 通知体
  * @param params 某些推送通知方式点击弹窗可跳转, 例：{ url: 'https://abc.com' }
- * @param author 作者仓库等信息  例：`本通知 By：https://github.com/Zy143L/qinglong`
  */
 
 const querystring = require('querystring');
@@ -609,7 +608,7 @@ function qywxamNotify(text, desp) {
               textcard: {
                 title: `${text}`,
                 description: `${desp}`,
-                url: 'https://github.com/Zy143L/qinglong',
+                url: '',
                 btntxt: '更多',
               },
             };
