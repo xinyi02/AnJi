@@ -10,6 +10,19 @@
 
 python和javaScript的定时任务管理面板
 
+# 青龙2.2-066 去升级版本 
+  
+```
+  docker run -dit \
+   -v $PWD/ql2/config:/ql/config \
+   -v $PWD/ql2/log:/ql/log \
+   -v $PWD/ql2/db:/ql/db \
+   -p 5700:5700 \
+   --name ql2 \
+   --hostname ql2 \
+   --restart always \
+   limoe/qinglong:latest
+ ```
 [![donate][donate-image]][donate-url] [![build status][build-status-image]][build-status-url] [![docker pulls][docker-pulls-image]][docker-pulls-url] [![docker version][docker-version-image]][docker-version-url] [![docker stars][docker-stars-image]][docker-stars-url] [![docker image size][docker-image-size-image]][docker-image-size-url]
 
 [donate-image]: https://img.shields.io/badge/donate-wechat-green?style=for-the-badge
