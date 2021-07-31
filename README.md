@@ -34,7 +34,7 @@ docker run -dit \
 
 输入命令`docker logs -f qinglong`可以查看实时日志
 
-![image-20210731144043403](C:\Users\momoe\AppData\Roaming\Typora\typora-user-images\image-20210731144043403.png)
+![image-20210731144043403](http://i0.hdslb.com/bfs/album/6e0dd522ac10acacd55f19d379b9c1f9bb877ba0.png)
 
 **当出现容器启动成功的字样再去浏览器访问面板**
 
