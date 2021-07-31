@@ -122,7 +122,7 @@ echo 'cp sendNotify.js /ql/scripts/sendNotify.js' >>/ql/config/extra.sh
 
   ![image-20210731151531183](http://i0.hdslb.com/bfs/album/e6e31bd65022341924eae0176585e35ff583a94d.png)
 
-* **修改顶栏卡片内容**
+* **修改顶栏卡片内容 ~~图一乐~~**
 
 > Ninja作者说后面卡片为自定义内容 这里先给出一个临时的玩法
 
