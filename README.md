@@ -169,14 +169,16 @@ Ninja 仅支持 qinglong 2.8+
 - [x] 扫码发送通知可关闭
 - [x] 添加备注并将通知中的 pt_pin nickName 修改为备注
 - [x] 默认备注为昵称
+- [x] 添加扫码推送卡片
 - [ ] 替换 cookie 失效通知
-- [ ] 添加扫码推送卡片
 - [ ] 登录界面展示自定义标语
 - [ ] 支持多容器，多面板
 - [ ] 采用自己的数据库，实现无视面板替换通知备注
 - [ ] 账号管理面板
 
 ## 文档
+
+### 容器内
 
 1. 容器映射 5701 端口，ninja 目录至宿主机
 
@@ -250,7 +252,34 @@ Ninja 仅支持 qinglong 2.8+
    cp sendNotify.js /ql/scripts/sendNotify.js
    ```
 
-## Ninja 环境变量
+### 容器外
+
+此种方式需要宿主机安装 `node` `pnpm` 等环境，不做过多介绍。
+
+使用此种方法无法跟随青龙一起启动，**无法发送扫码通知**，请知悉。
+
+```bash
+git clone git clone https://github.com/MoonBegonia/ninja.git
+cd ninja/backend
+pnpm install
+# 复制 sendNotify.js 到容器内 scripts 目录，`qinglong` 为容器名
+sudo docker cp sendNotify.js qinglong:/ql/scripts/sendNotify.js
+cp .env.example .env
+# 修改env文件
+vi .env
+node app.js
+```
+
+在 `.env` 文件中添加以下内容：
+
+```bash
+QL_DIR=qinglong 容器的本地路径
+QL_URL=http://localhost:5700
+```
+
+`node app.js` 想要在后台运行可以使用 `&` `nohup` `screen` 等命令。
+
+### Ninja 环境变量
 
 目前支持的环境变量有：
 
@@ -271,11 +300,17 @@ pm2 start
 
 **修改完成后需要 `pm2 start` 重启生效 ！！！**
 
-## sendNotify 环境变量
+### SendNotify 环境变量
 
 **此环境变量在青龙中配置！！！**
 
 - `NOTIFY_SKIP_LIST`: 通知黑名单，使用 `&` 分隔，例如 `东东乐园&东东萌宠`;
+
+### Ninja 自定义
+
+自定义推送二维码：将 `push.jpg` 文件添加到 `/ql/ninja/backend/static/` 目录下刷新网页即可。
+
+自定义常见活动：修改 `/ql/backend/static/activity.json` 即可
 
 ## 注意事项
 
