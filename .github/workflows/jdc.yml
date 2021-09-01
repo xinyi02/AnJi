@@ -1,4 +1,4 @@
-name: anji-jdc
+name: AnJi-jdc
 on:
   schedule:
     - cron: '1 */3 * * *'
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: xinyi02
+    types: AnJi
 jobs:
   repo-sync:
     env:
