@@ -1,4 +1,4 @@
-name: anji-sync
+name: anji-jdc
 on:
   schedule:
     - cron: '1 */3 * * *'
