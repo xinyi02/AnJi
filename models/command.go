@@ -302,7 +302,7 @@ var codeSignals = []CodeSignal{
 	{
 		Command: []string{"许愿", "愿望", "wish", "hope", "want"},
 		Handle: func(sender *Sender) interface{} {
-			return "听不到，看不见。"
+			//return "听不到，看不见。"
 			ct := sender.JoinContens()
 			if ct == "" {
 				rt := []string{}
